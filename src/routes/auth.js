@@ -3,10 +3,9 @@ import crypto from 'crypto';
 import { prisma } from '../lib/prisma';
 import dotenv from 'dotenv';
 import { z } from 'zod';
-import { FastifyInstance } from 'fastify';
 dotenv.config();
 
-export async function authRoute(app: FastifyInstance) {
+export async function authRoute(app) {
   app.post("/signin", async (req, reply) => {
 
     const bodySchema = z.object({
@@ -34,7 +33,7 @@ export async function authRoute(app: FastifyInstance) {
         }
       });
       if (user) {
-        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, {
+        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
           expiresIn: 60 * 60 // 60 min
         });
         return reply.status(200).send({ user, token });

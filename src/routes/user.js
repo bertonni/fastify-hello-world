@@ -1,9 +1,8 @@
-import { FastifyInstance } from "fastify";
 import { verifyJWT } from "../lib/utils";
 import { prisma } from "../lib/prisma";
 import { z } from "zod";
 
-export async function userDataRoute(app: FastifyInstance) {
+export async function userDataRoute(app) {
   app.get("/me/:id", { preHandler: verifyJWT }, async (request, reply) => {
     
     const bodySchema = z.object({

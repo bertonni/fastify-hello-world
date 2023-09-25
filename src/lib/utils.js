@@ -1,16 +1,13 @@
-import { FastifyRequest, FastifyReply } from "fastify";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
 dotenv.config();
 
-interface CustomRequest extends FastifyRequest {
-  user?: any;
-}
+
 
 export async function verifyJWT(
-  request: CustomRequest,
-  reply: FastifyReply,
-  next: (err?: Error) => void
+  request,
+  reply,
+  next
 ) {
   const token = request.headers.authorization;
 
@@ -21,7 +18,7 @@ export async function verifyJWT(
   }
 
   try {
-    const decoded: any = jwt.verify(token, process.env.JWT_SECRET as string);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     request.user = decoded;
     next()
   } catch (error) {

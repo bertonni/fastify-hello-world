@@ -2,10 +2,10 @@
   "name": "fastify-hello-world",
   "version": "1.0.0",
   "description": "A Fastify example to deploy to Render",
-  "main": "app.ts",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "tsx watch app.ts"
+    "start": "tsx watch app.js"
   },
   "repository": {
     "type": "git",
@@ -31,11 +31,8 @@
   },
   "devDependencies": {
     "@fastify/cors": "^8.4.0",
-    "@types/jsonwebtoken": "^9.0.3",
-    "@types/node": "^20.6.3",
     "prisma": "^5.3.1",
     "ts-node": "^10.9.1",
-    "tsx": "^3.12.10",
-    "typescript": "^5.2.2"
+    "tsx": "^3.12.10"
   }
 }
