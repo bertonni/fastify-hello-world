@@ -14,7 +14,7 @@ export async function userDataRoute(app) {
       const user = await prisma.user.findUniqueOrThrow({
         where: {
           id
-        }
+        },
       });
       return reply.status(200).send({ user });
     } catch (error) {

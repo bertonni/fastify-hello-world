@@ -34,7 +34,7 @@ export async function authRoute(app) {
       });
       if (user) {
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-          expiresIn: 60 * 60 // 60 min
+          expiresIn: 60 * 60 * 3 // 180 min
         });
         return reply.status(200).send({ user, token });
       }
@@ -61,7 +61,7 @@ export async function authRoute(app) {
       .digest("hex");
 
     try {
-      const user = await prisma.user.create({
+      await prisma.user.create({
         data: {
           name,
           email,
@@ -69,11 +69,12 @@ export async function authRoute(app) {
         },
       });
 
+
       return reply
         .status(201)
-        .send({ message: `Usuário criado com sucesso! `, user });
+        .send({ message: "Usuário criado com sucesso!" });
     } catch (error) {
-      return reply.status(400).send({ message: `Erro ao criar o usuário` });
+      return reply.status(500).send({ message: `Erro ao criar o usuário` });
     }
   });
 }

@@ -5,6 +5,7 @@ import { fastifyCors } from '@fastify/cors';
 import { protectedRoute } from "./src/routes/protected.js";
 import { authRoute } from "./src/routes/auth.js";
 import { userDataRoute } from "./src/routes/user.js";
+import { categoriesRoute } from "./src/routes/categories.js";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.register(authRoute);
 
 app.register(protectedRoute);
 app.register(userDataRoute);
+app.register(categoriesRoute);
 
 app.listen(
   {
