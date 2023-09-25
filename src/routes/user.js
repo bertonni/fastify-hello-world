@@ -1,5 +1,5 @@
 import { verifyJWT } from "../lib/utils";
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { z } from "zod";
 
 export async function userDataRoute(app) {

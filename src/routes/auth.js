@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import crypto from 'crypto';
-import { prisma } from '../lib/prisma';
+import { prisma } from '../lib/prisma.js';
 import dotenv from 'dotenv';
 import { z } from 'zod';
 dotenv.config();

@@ -1,4 +1,4 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 import { verifyJWT } from "../lib/utils";
 import { z } from "zod";
 

@@ -32,7 +32,6 @@
   "devDependencies": {
     "@fastify/cors": "^8.4.0",
     "prisma": "^5.3.1",
-    "ts-node": "^10.9.1",
     "tsx": "^3.12.10"
   }
 }

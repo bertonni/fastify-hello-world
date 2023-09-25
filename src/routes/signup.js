@@ -1,4 +1,4 @@
-const prisma = require("../lib/prisma");
+const prisma = require("../lib/prisma.js");
 const crypto = require('crypto');
 
 async function signUpRoute(app) {

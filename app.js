@@ -2,9 +2,9 @@
 import dotenv from "dotenv";
 import fastify from "fastify";
 import { fastifyCors } from '@fastify/cors';
-import { protectedRoute } from "./src/routes/protected";
-import { authRoute } from "./src/routes/auth";
-import { userDataRoute } from "./src/routes/user";
+import { protectedRoute } from "./src/routes/protected.js";
+import { authRoute } from "./src/routes/auth.js";
+import { userDataRoute } from "./src/routes/user.js";
 
 dotenv.config();
 
