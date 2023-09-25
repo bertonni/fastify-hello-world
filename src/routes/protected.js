@@ -1,5 +1,5 @@
 import { prisma } from "../lib/prisma.js";
-import { verifyJWT } from "../lib/utils";
+import { verifyJWT } from "../lib/utils.js";
 import { z } from "zod";
 
 export async function protectedRoute(app) {
