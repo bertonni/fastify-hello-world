@@ -6,8 +6,8 @@ import { protectedRoute } from "./src/routes/protected.js";
 import { authRoute } from "./src/routes/auth.js";
 import { userDataRoute } from "./src/routes/user.js";
 import { categoriesRoute } from "./src/routes/categories.js";
-import { expensesRoute } from "./src/routes/expenses.js";
-import { incomesRoute } from "./src/routes/incomes.js";
+import { addEpenseRoute, getExpensesRoute } from "./src/routes/expenses.js";
+import { addIncomeRoute, getIncomesRoute } from "./src/routes/incomes.js";
 
 dotenv.config();
 
@@ -26,8 +26,11 @@ app.register(authRoute);
 app.register(protectedRoute);
 app.register(userDataRoute);
 app.register(categoriesRoute);
-app.register(expensesRoute);
-app.register(incomesRoute);
+
+app.register(getExpensesRoute)
+app.register(addEpenseRoute);
+app.register(addIncomeRoute);
+app.register(getIncomesRoute);
 
 app.listen(
   {
